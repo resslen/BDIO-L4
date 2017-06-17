@@ -21,10 +21,12 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ExamActivity" />
         <activity android:name=".StatisticsActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".RegisterUserActivity" />
         <activity android:name=".UserPanelActivity" />
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".ProfileChangeActivity"></activity>
+        <activity android:name=".ProfileChangeActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".RegisterExaminerActivity"></activity>
     </application>
 
 </manifest>
