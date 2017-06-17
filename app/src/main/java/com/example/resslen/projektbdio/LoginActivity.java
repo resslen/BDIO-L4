@@ -51,15 +51,34 @@ public class LoginActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
 
                             if(success){
+                                String state = jsonResponse.getString("status");
                                 String surname = jsonResponse.getString("nazwisko");
                                 String name = jsonResponse.getString("imie");
+
+                                /*
+                                int y = Integer.parseInt(state);
+                                if(y == 1 ){
+                                    Intent intent = new Intent(LoginActivity.this, UserPanelActivity.class);
+                                    intent.putExtra("nazwisko", surname);
+                                    intent.putExtra("imie", name);
+                                    intent.putExtra("haslo", password);
+                                    intent.putExtra("email", email);
+                                    LoginActivity.this.startActivity(intent);
+                                }else{
+                                    Intent intent = new Intent(LoginActivity.this, ExaminerPanelActivity.class);
+                                    intent.putExtra("nazwisko", surname);
+                                    intent.putExtra("imie", name);
+                                    intent.putExtra("haslo", password);
+                                    intent.putExtra("email", email);
+                                    LoginActivity.this.startActivity(intent);
+                                }
+                                */
 
                                 Intent intent = new Intent(LoginActivity.this, UserPanelActivity.class);
                                 intent.putExtra("nazwisko", surname);
                                 intent.putExtra("imie", name);
                                 intent.putExtra("haslo", password);
                                 intent.putExtra("email", email);
-
                                 LoginActivity.this.startActivity(intent);
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);

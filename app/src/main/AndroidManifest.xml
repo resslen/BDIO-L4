@@ -26,7 +26,8 @@
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".ProfileChangeActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".RegisterExaminerActivity"></activity>
+        <activity android:name=".RegisterExaminerActivity" />
+        <activity android:name=".ExaminerPanelActivity"></activity>
     </application>
 
 </manifest>
