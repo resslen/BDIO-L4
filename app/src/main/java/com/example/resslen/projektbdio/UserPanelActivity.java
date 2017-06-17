@@ -24,14 +24,12 @@ public class UserPanelActivity extends AppCompatActivity {
         final Button bChange = (Button) findViewById(R.id.bChange);
 
 
-
+        //pobieranie danych z bazy
         Intent intent = getIntent();
-        String surname = intent.getStringExtra("nazwisko");
-        String name = intent.getStringExtra("imie");
-        String password = intent.getStringExtra("haslo");
-        String email = intent.getStringExtra("email");
-
-
+        final String surname = intent.getStringExtra("nazwisko");
+        final String name = intent.getStringExtra("imie");
+        final String password = intent.getStringExtra("haslo");
+        final String email = intent.getStringExtra("email");
 
         tvSurname.setText(surname);
         tvName.setText(name);
@@ -42,6 +40,10 @@ public class UserPanelActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent changeIntent = new Intent(UserPanelActivity.this, ProfileChangeActivity.class);
+                changeIntent.putExtra("1", surname);
+                changeIntent.putExtra("2", name);
+                changeIntent.putExtra("3", email);
+                changeIntent.putExtra("4", password);
                 UserPanelActivity.this.startActivity(changeIntent);
             }
         }); 

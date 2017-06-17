@@ -17,6 +17,10 @@ import org.json.JSONObject;
 
 import static com.example.resslen.projektbdio.R.id.bLogin;
 import static com.example.resslen.projektbdio.R.id.etLogin;
+import static com.example.resslen.projektbdio.R.id.tvEmail;
+import static com.example.resslen.projektbdio.R.id.tvName;
+import static com.example.resslen.projektbdio.R.id.tvPassword;
+import static com.example.resslen.projektbdio.R.id.tvSurname;
 
 public class ProfileChangeActivity extends AppCompatActivity {
 
@@ -30,6 +34,18 @@ public class ProfileChangeActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final Button bEdit = (Button) findViewById(R.id.bEdit);
+
+        Intent intent = getIntent();
+        final String surname = intent.getStringExtra("1");
+        final String name = intent.getStringExtra("2");
+        final String password = intent.getStringExtra("3");
+        final String email = intent.getStringExtra("4");
+
+        etSurname.setText(surname);
+        etName.setText(name);
+        etPassword.setText(password);
+        etEmail.setText(email);
+
 
         bEdit.setOnClickListener(new View.OnClickListener(){
             @Override
