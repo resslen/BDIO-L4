@@ -35,6 +35,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                 final String surname = etSurname.getText().toString();
                 final String password = etPassword.getText().toString();
                 final String email = etEmail.getText().toString();
+                final String state = "1";
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     @Override
@@ -59,7 +60,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(surname, name, password, email, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(surname, name, password, email, state, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterUserActivity.this);
                 queue.add(registerRequest);
             }
