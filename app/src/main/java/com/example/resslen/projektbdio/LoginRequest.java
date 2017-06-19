@@ -11,7 +11,7 @@ import java.util.Map;
  */
 
 public class LoginRequest extends StringRequest {
-    private static final String LOGIN_REQUEST_URL = "https://bdiol4.herokuapp.com/groups/logowanie";
+    private static final String LOGIN_REQUEST_URL = "https://bdiol4.herokuapp.com/logowanie";
     private Map<String, String> params;
 
     public LoginRequest(String password, String email, Response.Listener<String> listener){

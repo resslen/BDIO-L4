@@ -22,6 +22,7 @@ public class UserPanelActivity extends AppCompatActivity {
         final TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
         final TextView tvPassword = (TextView) findViewById(R.id.tvPassword);
         final Button bChange = (Button) findViewById(R.id.bChange);
+        final TextView dupa = (TextView) findViewById(R.id.tvDUPA);
 
 
         //pobieranie danych z bazy
@@ -30,11 +31,13 @@ public class UserPanelActivity extends AppCompatActivity {
         final String name = intent.getStringExtra("imie");
         final String password = intent.getStringExtra("haslo");
         final String email = intent.getStringExtra("email");
+        final String dupa2 = intent.getStringExtra("status");
 
         tvSurname.setText(surname);
         tvName.setText(name);
         tvPassword.setText(password);
         tvEmail.setText(email);
+        dupa.setText(dupa2);
 
         bChange.setOnClickListener(new View.OnClickListener(){
             @Override

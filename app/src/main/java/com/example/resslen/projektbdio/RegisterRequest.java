@@ -11,7 +11,7 @@ import java.util.Map;
  */
 
 public class RegisterRequest extends StringRequest {
-    private static final String REGISTER_REQUEST_URL = "https://resslen.000webhostapp.com/Register.php";
+    private static final String REGISTER_REQUEST_URL = "https://bdiol4.herokuapp.com/rejestracja";
     private Map<String, String> params;
 
     public RegisterRequest(String surname, String name, String password, String email, String state, Response.Listener<String> listener){

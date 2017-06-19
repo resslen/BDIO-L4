@@ -54,8 +54,9 @@ public class LoginActivity extends AppCompatActivity {
                                 String state = jsonResponse.getString("status");
                                 String surname = jsonResponse.getString("nazwisko");
                                 String name = jsonResponse.getString("imie");
+                                String id_studenta_or_egzaminatora = jsonResponse.getString("id_studenta_or_egzamintora");
 
-                                /*
+
                                 int y = Integer.parseInt(state);
                                 if(y == 1 ){
                                     Intent intent = new Intent(LoginActivity.this, UserPanelActivity.class);
@@ -63,23 +64,17 @@ public class LoginActivity extends AppCompatActivity {
                                     intent.putExtra("imie", name);
                                     intent.putExtra("haslo", password);
                                     intent.putExtra("email", email);
+                                    intent.putExtra("status", state);
                                     LoginActivity.this.startActivity(intent);
-                                }else{
+                                }else if(y == 0){
                                     Intent intent = new Intent(LoginActivity.this, ExaminerPanelActivity.class);
                                     intent.putExtra("nazwisko", surname);
                                     intent.putExtra("imie", name);
                                     intent.putExtra("haslo", password);
                                     intent.putExtra("email", email);
+                                    intent.putExtra("status", state);
                                     LoginActivity.this.startActivity(intent);
                                 }
-                                */
-
-                                Intent intent = new Intent(LoginActivity.this, UserPanelActivity.class);
-                                intent.putExtra("nazwisko", surname);
-                                intent.putExtra("imie", name);
-                                intent.putExtra("haslo", password);
-                                intent.putExtra("email", email);
-                                LoginActivity.this.startActivity(intent);
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
                                 builder.setMessage("Logowanie niepomyślne")
