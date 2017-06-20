@@ -103,30 +103,32 @@
         tools:layout_constraintTop_creator="1" />
 
     <Button
-        android:id="@+id/bNewTest"
+        android:id="@+id/bExam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="25dp"
-        android:text="Utwórz nowy test"
+        android:onClick="clickExamButton"
+        android:text="Egzaminy oraz zarządzanie grupami"
         android:textColor="@android:color/black"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/tvPassword"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <Button
-        android:id="@+id/bListOfTests"
+        android:id="@+id/bStatistics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lista utworzonych testów"
+        android:onClick="clickStatisticsButton"
+        android:text="Statystyki oraz analiza egzaminów"
         android:textColor="@android:color/black"
-        app:layout_constraintLeft_toLeftOf="@+id/bNewTest"
-        app:layout_constraintTop_toBottomOf="@+id/bNewTest"
+        app:layout_constraintLeft_toLeftOf="@+id/bExam"
+        app:layout_constraintTop_toBottomOf="@+id/bExam"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
 
@@ -159,7 +161,7 @@
         app:layout_constraintRight_toLeftOf="@+id/tvName"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/bNewTest"
+        app:layout_constraintBottom_toBottomOf="@+id/bExam"
         android:layout_marginEnd="168dp"
         android:layout_marginTop="184dp"
         android:layout_marginBottom="183dp"

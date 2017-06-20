@@ -49,4 +49,16 @@ public class UserPanelActivity extends AppCompatActivity {
         }); 
 
     }
+
+    /** Called when the user taps the EXAM button */
+    public void clickExamButton(View view) {
+        Intent intent = new Intent(this, ExamActivity.class);
+        startActivity(intent);
+    }
+
+    /** Called when the user taps the STATISTICS button */
+    public void clickStatisticsButton(View view) {
+        Intent intent = new Intent(this, StatisticsActivity.class);
+        startActivity(intent);
+    }
 }
