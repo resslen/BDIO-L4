@@ -34,6 +34,8 @@ public class ProfileChangeActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final Button bEdit = (Button) findViewById(R.id.bEdit);
+        final EditText etRepeatPassword = (EditText) findViewById(R.id.etRepeatPassword);
+
 
         Intent intent = getIntent();
         final String surname = intent.getStringExtra("1");
@@ -44,6 +46,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
         etSurname.setText(surname);
         etName.setText(name);
         etPassword.setText(password);
+        etRepeatPassword.setText(password);
         etEmail.setText(email);
 
 
@@ -54,6 +57,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 final String name = etName.getText().toString();
                 final String email = etEmail.getText().toString();
                 final String password = etPassword.getText().toString();
+                final String repeat_password = etRepeatPassword.getText().toString();
 
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
@@ -63,7 +67,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
 
-                            if(success){
+                            if(success && (password.equals(repeat_password))){
                                 Intent intent = new Intent(ProfileChangeActivity.this, UserPanelActivity.class);
                                 intent.putExtra("nazwisko", surname);
                                 intent.putExtra("imie", name);
@@ -72,7 +76,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                                 ProfileChangeActivity.this.startActivity(intent);
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(ProfileChangeActivity.this);
-                                builder.setMessage("Zmiana danych niepomyślna")
+                                builder.setMessage("Zmiana danych niepomyślna. Sprawdź poprawność wprowadzonych danych")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
