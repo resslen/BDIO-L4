@@ -15,6 +15,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.example.resslen.projektbdio.R.id.etRepeatPassword;
+
 public class RegisterUserActivity extends AppCompatActivity {
 
     @Override
@@ -27,6 +29,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final Button bRegister = (Button) findViewById(R.id.bRegister);
+        final EditText etRepeatPassword = (EditText) findViewById(R.id.etRepeatPassword);
 
         bRegister.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -34,6 +37,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                 final String name = etName.getText().toString();
                 final String surname = etSurname.getText().toString();
                 final String password = etPassword.getText().toString();
+                final String repeat_password = etRepeatPassword.getText().toString();
                 final String email = etEmail.getText().toString();
                 final String state = "1";
 
@@ -44,12 +48,12 @@ public class RegisterUserActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
 
-                            if(success){
+                            if(success && (password.equals(repeat_password))){
                                 Intent intent = new Intent(RegisterUserActivity.this, LoginActivity.class);
                                 RegisterUserActivity.this.startActivity(intent);
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterUserActivity.this);
-                                builder.setMessage("Rejestracja niepomyślna")
+                                builder.setMessage("Rejestracja niepomyślna. Sprawdź poprawność wprowadzonych danych")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
