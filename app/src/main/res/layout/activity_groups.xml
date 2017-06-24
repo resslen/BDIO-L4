@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.resslen.projektbdio.GroupsActivity">
+
+    <Button
+        android:id="@+id/bAddgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Utworz grupe"
+        android:onClick="clickAddgroupButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bShowGroup"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/bEditgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edytuj Grupe"
+        android:onClick="clickEditGroupButton"
+        app:layout_constraintBottom_toTopOf="@+id/bShowGroup"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bShowGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyswietl Grupy"
+        android:onClick="clickShowGroupButton"
+        app:layout_constraintBottom_toTopOf="@+id/bAddgroup"
+        app:layout_constraintTop_toBottomOf="@+id/bEditgroup"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502" />
+</android.support.constraint.ConstraintLayout>

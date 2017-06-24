@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ExamActivity" />
         <activity android:name=".StatisticsActivity" />
         <activity android:name=".RegisterUserActivity" />
@@ -27,7 +26,12 @@
         <activity android:name=".ProfileChangeActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterExaminerActivity" />
-        <activity android:name=".ExaminerPanelActivity"></activity>
+        <activity android:name=".ExaminerPanelActivity" />
+        <activity android:name=".GroupsActivity" />
+        <activity android:name=".EditGroupActivity" />
+        <activity android:name=".AddGroupActivity" />
+        <activity android:name=".ShowGroupActivity" />
+        <activity android:name=".AddGroupRequest"></activity>
     </application>
 
 </manifest>

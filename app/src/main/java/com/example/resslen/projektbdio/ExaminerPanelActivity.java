@@ -19,6 +19,7 @@ public class ExaminerPanelActivity extends AppCompatActivity {
         final TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
         final TextView tvPassword = (TextView) findViewById(R.id.tvPassword);
         final Button bChange = (Button) findViewById(R.id.bChange);
+        final Button bGrupy = (Button) findViewById(R.id.bGrupy);
 
 
         //pobieranie danych z bazy
@@ -27,6 +28,7 @@ public class ExaminerPanelActivity extends AppCompatActivity {
         final String name = intent.getStringExtra("imie");
         final String password = intent.getStringExtra("haslo");
         final String email = intent.getStringExtra("email");
+
 
         tvSurname.setText(surname);
         tvName.setText(name);
@@ -44,6 +46,13 @@ public class ExaminerPanelActivity extends AppCompatActivity {
                 ExaminerPanelActivity.this.startActivity(changeIntent);
             }
         });
+        bGrupy.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+               clickGrupyButton();
+            }
+        });
 
     }
 
@@ -56,6 +65,14 @@ public class ExaminerPanelActivity extends AppCompatActivity {
     /** Called when the user taps the STATISTICS button */
     public void clickStatisticsButton(View view) {
         Intent intent = new Intent(this, StatisticsActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickGrupyButton() {
+        Intent intent2 = getIntent();
+        final String ID = intent2.getStringExtra("ID");
+        Intent intent = new Intent(this, GroupsActivity.class);
+        intent.putExtra("ID", ID);
         startActivity(intent);
     }
 }

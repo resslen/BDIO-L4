@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProjektBDIO</string>
+    <string name="title_activity_add_group">AddGroup</string>
 </resources>
