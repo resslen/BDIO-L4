@@ -138,7 +138,7 @@
         android:id="@+id/Nazwisko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="114dp"
+        android:layout_marginRight="77dp"
         android:text="Nazwisko"
         android:textAllCaps="true"
         android:textColor="?android:attr/textColorPrimary"
@@ -148,7 +148,7 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/Imie"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="14dp" />
 
     <TextView
         android:id="@+id/Imie"

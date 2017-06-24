@@ -27,7 +27,10 @@ public class GroupsActivity extends AppCompatActivity {
     }
 
     public void clickShowGroupButton(View view) {
+        Intent intent2= getIntent();
+        final String ID = intent2.getStringExtra("ID");
         Intent intent = new Intent(this, ShowGroupActivity.class);
+        intent.putExtra("ID", ID);
         startActivity(intent);
     }
 }
