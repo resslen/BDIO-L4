@@ -35,7 +35,9 @@
         <activity android:name=".GroupPropertiesActivity" />
         <activity android:name=".UsunCzlonkaRequest" />
         <activity android:name=".EditGroupRequest" />
-        <activity android:name=".DeleteGroupRequest"></activity>
+        <activity android:name=".DeleteGroupRequest" />
+        <activity android:name=".DolaczDoGrupy" />
+        <activity android:name=".DolaczDoGrupyRequest"></activity>
     </application>
 
 </manifest>

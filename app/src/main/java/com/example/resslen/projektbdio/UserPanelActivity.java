@@ -11,7 +11,11 @@ import android.widget.TextView;
 import static android.R.attr.password;
 
 public class UserPanelActivity extends AppCompatActivity {
-
+    String ID;
+     String surname ;
+     String name ;
+     String password;
+     String email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +30,11 @@ public class UserPanelActivity extends AppCompatActivity {
 
         //pobieranie danych z bazy
         Intent intent = getIntent();
-        final String surname = intent.getStringExtra("nazwisko");
-        final String name = intent.getStringExtra("imie");
-        final String password = intent.getStringExtra("haslo");
-        final String email = intent.getStringExtra("email");
-
+        surname = intent.getStringExtra("nazwisko");
+        name = intent.getStringExtra("imie");
+        password = intent.getStringExtra("haslo");
+        email = intent.getStringExtra("email");
+        ID = intent.getStringExtra("ID");
         tvSurname.setText(surname);
         tvName.setText(name);
         tvPassword.setText(password);
@@ -59,6 +63,16 @@ public class UserPanelActivity extends AppCompatActivity {
     /** Called when the user taps the STATISTICS button */
     public void clickStatisticsButton(View view) {
         Intent intent = new Intent(this, StatisticsActivity.class);
+        startActivity(intent);
+    }
+    /** Called when the user taps the STATISTICS button */
+    public void onClickDolaczButton(View view) {
+        Intent intent = new Intent(this, StatisticsActivity.class);
+        intent.putExtra("ID", ID);
+        intent.putExtra("nazwisko",surname);
+        intent.putExtra("imie",name);
+        intent.putExtra("haslo",password);
+        intent.putExtra("email",email);
         startActivity(intent);
     }
 }
