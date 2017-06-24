@@ -31,7 +31,8 @@
         <activity android:name=".EditGroupActivity" />
         <activity android:name=".AddGroupActivity" />
         <activity android:name=".ShowGroupActivity" />
-        <activity android:name=".AddGroupRequest"></activity>
+        <activity android:name=".AddGroupRequest" />
+        <activity android:name=".ShowGroupRequest"></activity>
     </application>
 
 </manifest>

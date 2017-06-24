@@ -1,12 +1,15 @@
 package com.example.resslen.projektbdio;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,6 +30,7 @@ public class AddGroupActivity extends AppCompatActivity {
         final EditText nazwa = (EditText) findViewById(R.id.editText2);
         final EditText haslo = (EditText) findViewById(R.id.editText3);
         final Button DODAJ = (Button) findViewById(R.id.button5);
+       // final TextView tekst = (TextView) findViewById(R.id.textView7);
 
         DODAJ.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -40,27 +44,28 @@ public class AddGroupActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try{
                             JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
                             String error = jsonResponse.getString("error");
-                            if(success){
+
+                            if(error.equals("0")){
                                 Intent intent = new Intent(AddGroupActivity.this, ExaminerPanelActivity.class);
-                                AddGroupActivity.this.startActivity(intent);
+                                startActivity(intent);
                             }
-                            else if(error=="1"){
+                            else if(error.equals("1")){
+
                                 AlertDialog.Builder builder = new AlertDialog.Builder(AddGroupActivity.this);
                                 builder.setMessage("Nazwa i hasło nie mogą być puste!")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
                             }
-                            else if(error=="2"){
+                            else if(error.equals("2")){
                                 AlertDialog.Builder builder = new AlertDialog.Builder(AddGroupActivity.this);
                                 builder.setMessage("Takie hasło już istneieje w systemie!")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
                             }
-                            else if(error=="3"){
+                            else if(error.equals("3")){
                                 AlertDialog.Builder builder = new AlertDialog.Builder(AddGroupActivity.this);
                                 builder.setMessage("Błąd w przetwarzaniu bazy danych")
                                         .setNegativeButton("Retry", null)
@@ -80,5 +85,22 @@ public class AddGroupActivity extends AppCompatActivity {
                 queue.add(addgrouprequest);
             }
         });
+    }
+    public boolean dialog1(){
+
+        AlertDialog.Builder dial = new AlertDialog.Builder(AddGroupActivity.this);
+        dial.setMessage("W zależności od urządzenia aplikacja może pokazywać różną lokalizację użytkownika.").setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog dial2 = dial.create();
+        dial2.setCanceledOnTouchOutside(false);
+        dial2.show();
+        Button buttonp = dial2.getButton(DialogInterface.BUTTON_POSITIVE);
+
+        return true;
     }
 }
