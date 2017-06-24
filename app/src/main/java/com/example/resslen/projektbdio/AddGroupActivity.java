@@ -47,7 +47,8 @@ public class AddGroupActivity extends AppCompatActivity {
                             String error = jsonResponse.getString("error");
 
                             if(error.equals("0")){
-                                Intent intent = new Intent(AddGroupActivity.this, ExaminerPanelActivity.class);
+                                Intent intent = new Intent(AddGroupActivity.this, ShowGroupActivity.class);
+                                intent.putExtra("ID", ID);
                                 startActivity(intent);
                             }
                             else if(error.equals("1")){

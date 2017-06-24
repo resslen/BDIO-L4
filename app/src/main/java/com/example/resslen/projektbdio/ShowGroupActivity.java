@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -25,6 +26,7 @@ import org.json.JSONObject;
 
 public class ShowGroupActivity extends AppCompatActivity {
     String grupy[];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +34,16 @@ public class ShowGroupActivity extends AppCompatActivity {
         Intent intent2= getIntent();
         final String ID = intent2.getStringExtra("ID");
         final TextView tekstg=(TextView) findViewById(R.id.textView9);
+        final Button gDodaj= (Button) findViewById(R.id.bDodaj);
+        final EditText gNazwa = (EditText)findViewById(R.id.gNazwa) ;
+        final Button bWyswietl = (Button) findViewById(R.id.bWyswietl) ;
         Response.Listener<String> responseListener = new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 try{
                     JSONObject jsonResponse = new JSONObject(response);
                     JSONArray groups = jsonResponse.getJSONArray("groups");
+
                     String ID_n[] = new String[groups.length()];
                     String Nazwa[] = new String[groups.length()];
                     for (int i = 0; i < groups.length(); i++) {
@@ -70,42 +76,35 @@ public class ShowGroupActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(ShowGroupActivity.this);
         queue.add(showGroupRequest);
 
-
-
-
-
-    }
-
-   /* public void getGroupsData(JSONArray groups,String[] grupy) {
-
-        String ID_n[] = new String[groups.length()];
-        String Nazwa[] = new String[groups.length()];
-        try{
-
-
-
-
-                            for (int i = 0; i < groups.length(); i++) {
-                                JSONObject obiekt = groups.getJSONObject(i);
-                                String id = obiekt.getString("id_grupy");
-                                ID[i] = id;
-                            }
-                            for (int i = 0; i < groups.length(); i++) {
-                                JSONObject obiekt = groups.getJSONObject(i);
-                                String name = obiekt.getString("nazwa");
-                                Nazwa[i] = name;
-                            }
-
-
-        } catch (JSONException e){
-            e.printStackTrace();
-        }
-        grupy= new String[ID.length];
-        grupy=ID;
-        /*for(int i=0; i<ID.length;i++)
-            grupy[i]=ID[i]+"."+Nazwa[i];*/
+        gDodaj.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent2= getIntent();
+                final String ID = intent2.getStringExtra("ID");
+                Intent intent = new Intent(ShowGroupActivity.this, AddGroupActivity.class);
+                intent.putExtra("ID", ID);
+                startActivity(intent);
+            }
+        });
+        bWyswietl.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent2= getIntent();
+                final String ID = intent2.getStringExtra("ID");
+                final String g_Nazwa=gNazwa.getText().toString();
+                Intent intent = new Intent(ShowGroupActivity.this, GroupPropertiesActivity.class);
+                intent.putExtra("ID", ID);
+                intent.putExtra("g_nazwa",g_Nazwa);
+                startActivity(intent);
+            }
+        });
 
 
 
     }
+
+
+}
+
+
 

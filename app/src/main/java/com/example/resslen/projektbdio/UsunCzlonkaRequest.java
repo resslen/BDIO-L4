@@ -10,14 +10,15 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShowGroupRequest extends StringRequest {
-    private static final String SHOW_GROUP_REQUEST_URL = "https://bdiol4.herokuapp.com/groups/api/getGroups";
+public class UsunCzlonkaRequest extends StringRequest {
+    private static final String USUN_CZLONKA_REQUEST_URL = "https://bdiol4.herokuapp.com/groups/api/deleteMember";
     private Map<String, String> params;
 
-    public ShowGroupRequest(String id_egzamintora, Response.Listener<String> listener){
-        super(Request.Method.POST, SHOW_GROUP_REQUEST_URL, listener, null);
+    public UsunCzlonkaRequest(String id_grupy,String id_uzytkownika, Response.Listener<String> listener){
+        super(Request.Method.POST, USUN_CZLONKA_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("id_egzamintora", id_egzamintora);
+        params.put("id_grupy", id_grupy);
+        params.put("id_uzytkownika", id_uzytkownika);
     }
 
     @Override
@@ -25,4 +26,3 @@ public class ShowGroupRequest extends StringRequest {
         return params;
     }
 }
-
