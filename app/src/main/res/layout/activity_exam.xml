@@ -6,43 +6,98 @@
     android:layout_height="match_parent"
     tools:context="com.example.resslen.projektbdio.ExamActivity">
 
-    <Button
-        android:id="@+id/bCreateExam"
-        android:layout_width="166dp"
-        android:layout_height="47dp"
-        android:text="Utwórz Egzamin"
-        android:onClick="clickCreateButton"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="147dp"
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="129dp"
+        android:layout_height="372dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintRight_toLeftOf="@+id/bShowExam3"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="214dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Wyswietl szczegóły:"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="125dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Egzaminy:"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/bCreateExam" />
 
     <Button
-        android:id="@+id/bManageExam"
-        android:layout_width="209dp"
-        android:layout_height="39dp"
-        android:text="Zarzadzanie Egzaminem"
-        android:onClick="clickManagetExamButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="167dp"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/bShowExam3"
+        android:id="@+id/bCreateExam"
+        android:layout_width="149dp"
+        android:layout_height="52dp"
+        android:text="Utwórz Egzamin"
+        android:onClick="clickCreateButton"
+        app:layout_constraintRight_toLeftOf="@+id/textView14"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/bShowExam3"
-        app:layout_constraintVertical_bias="0.666" />
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
         android:id="@+id/bShowExam3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wyświetl Egzaminy"
+        android:text="Wyświetl Egzamin"
         android:onClick="clickShowExamButton"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/bCreateExam"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bEditExam"
-        app:layout_constraintVertical_bias="0.476"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/bCreateExam" />
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/etPodajidegzaminu"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/etPodajidegzaminu" />
+
+    <EditText
+        android:id="@+id/etPodajidegzaminu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Podaj id egzaminu"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        android:layout_marginRight="-6dp"
+        app:layout_constraintRight_toRightOf="@+id/textView14" />
 
 </android.support.constraint.ConstraintLayout>

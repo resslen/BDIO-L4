@@ -37,8 +37,7 @@
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="63dp" />
+        tools:layout_editor_absoluteY="63dp" />
 
     <TextView
         android:id="@+id/textView10"

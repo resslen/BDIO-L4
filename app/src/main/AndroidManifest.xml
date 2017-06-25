@@ -42,7 +42,6 @@
         <activity android:name=".EditExamActivity" />
         <activity android:name=".EditKeyActivity" />
         <activity android:name=".ManageExamActivity" />
-        <activity android:name=".ShowExamActivity"></activity>
     </application>
 
 </manifest>
