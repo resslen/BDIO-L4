@@ -107,7 +107,7 @@
         android:id="@+id/Nazwisko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="115dp"
+        android:layout_marginRight="55dp"
         android:text="Nazwisko"
         android:textAllCaps="true"
         android:textColor="?android:attr/textColorPrimary"
@@ -117,7 +117,7 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/Imie"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="18dp" />
+        android:layout_marginBottom="17dp" />
 
     <TextView
         android:id="@+id/Imie"
@@ -173,19 +173,14 @@
         android:id="@+id/bExam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="73dp"
         android:onClick="clickExamButton"
         android:text="Egzaminy oraz zarządzanie grupami"
         android:textColor="@android:color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
 
     <Button
         android:id="@+id/bStatistics"
@@ -194,15 +189,16 @@
         android:onClick="clickStatisticsButton"
         android:text="Statystyki oraz analiza egzaminów"
         android:textColor="@android:color/black"
-        app:layout_constraintLeft_toLeftOf="@+id/bExam"
-        app:layout_constraintTop_toBottomOf="@+id/bExam"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904" />
 
     <Button
         android:id="@+id/bDolacz"
         android:layout_width="297dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:onClick="onClickDolaczButton"
         android:text="DOłącz do grupy"
         app:layout_constraintBottom_toBottomOf="parent"

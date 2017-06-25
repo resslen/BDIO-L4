@@ -67,7 +67,7 @@ public class UserPanelActivity extends AppCompatActivity {
     }
     /** Called when the user taps the STATISTICS button */
     public void onClickDolaczButton(View view) {
-        Intent intent = new Intent(this, StatisticsActivity.class);
+        Intent intent = new Intent(this, DolaczDoGrupy.class);
         intent.putExtra("ID", ID);
         intent.putExtra("nazwisko",surname);
         intent.putExtra("imie",name);

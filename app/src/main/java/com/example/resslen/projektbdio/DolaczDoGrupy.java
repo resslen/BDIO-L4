@@ -29,7 +29,7 @@ public class DolaczDoGrupy extends AppCompatActivity {
         final String haslo=intent.getStringExtra("haslo");
         final String email=intent.getStringExtra("email");
 
-        final Button OK = (Button)findViewById(R.id.OK);
+        final Button OK = (Button)findViewById(R.id.bDolacz);
         final EditText eHaslo=(EditText)findViewById(R.id.eHaslo);
         OK.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,13 +51,35 @@ public class DolaczDoGrupy extends AppCompatActivity {
                                 intent.putExtra("email",email);
                                 startActivity(intent);
                             }
-                            else{
+                            else if(error.equals("1")){
                                 AlertDialog.Builder builder = new AlertDialog.Builder(DolaczDoGrupy.this);
-                                builder.setMessage("Błąd!")
+                                builder.setMessage("Nie podano hasła!")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
                             }
+                            else if(error.equals("2")){
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DolaczDoGrupy.this);
+                                builder.setMessage("Nie istnieje grupa posiadająca podane hasło!")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
+                            }
+                            else if(error.equals("3")){
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DolaczDoGrupy.this);
+                                builder.setMessage("Jesteś już członkiem tej grupy!")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
+                            }
+                            else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DolaczDoGrupy.this);
+                                builder.setMessage("Błąd przetwarzania danych!")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
+                            }
+
 
                         } catch (JSONException e){
                             e.printStackTrace();

@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DolaczDoGrupyRequest extends StringRequest {
-    private static final String DOLACZ_DO_GRUPY_REQUEST_URL = "https://bdiol4.herokuapp.com/?";
+    private static final String DOLACZ_DO_GRUPY_REQUEST_URL = "https://bdiol4.herokuapp.com/groups/api/addMemberToGroup";
     private Map<String, String> params;
 
     public DolaczDoGrupyRequest(String id_uzytkownika,String id_grupy, Response.Listener<String> listener){
         super(Request.Method.POST, DOLACZ_DO_GRUPY_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("id_grupy", id_grupy);
+        params.put("haslo", id_grupy);
         params.put("id_uzytkownika", id_uzytkownika);
     }
 
