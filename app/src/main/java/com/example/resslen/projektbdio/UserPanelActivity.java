@@ -12,10 +12,11 @@ import static android.R.attr.password;
 
 public class UserPanelActivity extends AppCompatActivity {
     String ID;
-     String surname ;
-     String name ;
-     String password;
-     String email;
+    String surname;
+    String name;
+    String password;
+    String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +41,9 @@ public class UserPanelActivity extends AppCompatActivity {
         tvPassword.setText(password);
         tvEmail.setText(email);
 
-        bChange.setOnClickListener(new View.OnClickListener(){
+        bChange.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent changeIntent = new Intent(UserPanelActivity.this, ProfileChangeActivity.class);
                 changeIntent.putExtra("1", surname);
                 changeIntent.putExtra("2", name);
@@ -50,29 +51,36 @@ public class UserPanelActivity extends AppCompatActivity {
                 changeIntent.putExtra("4", password);
                 UserPanelActivity.this.startActivity(changeIntent);
             }
-        }); 
+        });
 
     }
 
-    /** Called when the user taps the EXAM button */
-    public void clickExamButton(View view) {
-        Intent intent = new Intent(this, ExamActivity.class);
-        startActivity(intent);
-    }
+    /**
+     * Called when the user taps the EXAM button
+     */
 
-    /** Called when the user taps the STATISTICS button */
+
+    /**
+     * Called when the user taps the STATISTICS button
+     */
     public void clickStatisticsButton(View view) {
         Intent intent = new Intent(this, StatisticsActivity.class);
         startActivity(intent);
     }
-    /** Called when the user taps the STATISTICS button */
-    public void onClickDolaczButton(View view) {
-        Intent intent = new Intent(this, DolaczDoGrupy.class);
+    public void b10(View view) {
+        Intent intent = new Intent(this, ExamGroupUser.class);
+        intent.putExtra("nazwisko", surname);
+        intent.putExtra("imie", name);
+        intent.putExtra("email", email);
+        intent.putExtra("haslo", password);
         intent.putExtra("ID", ID);
-        intent.putExtra("nazwisko",surname);
-        intent.putExtra("imie",name);
-        intent.putExtra("haslo",password);
-        intent.putExtra("email",email);
         startActivity(intent);
     }
+
+    /**
+     * Called when the user taps the STATISTICS button
+     */
+
+
+
 }

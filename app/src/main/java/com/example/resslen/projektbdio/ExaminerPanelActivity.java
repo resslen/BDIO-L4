@@ -19,7 +19,7 @@ public class ExaminerPanelActivity extends AppCompatActivity {
         final TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
         final TextView tvPassword = (TextView) findViewById(R.id.tvPassword);
         final Button bChange = (Button) findViewById(R.id.bChange);
-        final Button bGrupy = (Button) findViewById(R.id.bGrupy);
+
 
 
         //pobieranie danych z bazy
@@ -46,24 +46,12 @@ public class ExaminerPanelActivity extends AppCompatActivity {
                 ExaminerPanelActivity.this.startActivity(changeIntent);
             }
         });
-        bGrupy.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
 
-               clickGrupyButton();
-            }
-        });
+
 
     }
 
     /** Called when the user taps the EXAM button */
-    public void clickExamButton(View view) {
-        Intent Kintent = getIntent();
-        final String ID = Kintent.getStringExtra("ID");
-        Intent intent = new Intent(this, ExamActivity.class);
-        intent.putExtra("ID", ID);
-        startActivity(intent);
-    }
 
     /** Called when the user taps the STATISTICS button */
     public void clickStatisticsButton(View view) {
@@ -71,10 +59,12 @@ public class ExaminerPanelActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void clickGrupyButton() {
+
+
+    public void clickZacznij(View view) {
         Intent intent2 = getIntent();
         final String ID = intent2.getStringExtra("ID");
-        Intent intent = new Intent(this, ShowGroupActivity.class);
+        Intent intent = new Intent(this, ExamGroup.class);
         intent.putExtra("ID", ID);
         startActivity(intent);
     }
