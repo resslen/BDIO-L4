@@ -66,12 +66,10 @@ public class ExamActivity extends AppCompatActivity {
         bWyswietleg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent2= getIntent();
-                final String ID = intent2.getStringExtra("ID");
-                final String Nazwa_eg=Nazwaeg.getText().toString();
+                final String id_eg=Nazwaeg.getText().toString();
                 Intent intent = new Intent(ExamActivity.this, ManageExamActivity.class);
                 intent.putExtra("ID", ID);
-                intent.putExtra("Nazwa_eg",Nazwa_eg);
+                intent.putExtra("id_egzaminu",id_eg);
                 startActivity(intent);
 
             }
@@ -79,8 +77,6 @@ public class ExamActivity extends AppCompatActivity {
         Dodajeg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent Kintent = getIntent();
-                final String ID = Kintent.getStringExtra("ID");
                 Intent intent = new Intent(ExamActivity.this, AddExamActivity.class);
                 intent.putExtra("ID", ID);
                 startActivity(intent);

@@ -157,32 +157,6 @@
         app:layout_constraintHorizontal_bias="0.134" />
 
     <Button
-        android:id="@+id/bExam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="clickExamButton"
-        android:text="Egzaminy oraz zarządzanie grupami"
-        android:textColor="@android:color/black"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775" />
-
-    <Button
-        android:id="@+id/bStatistics"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="clickStatisticsButton"
-        android:text="Statystyki oraz analiza egzaminów"
-        android:textColor="@android:color/black"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
-
-    <Button
         android:id="@+id/bDolacz"
         android:layout_width="297dp"
         android:layout_height="48dp"

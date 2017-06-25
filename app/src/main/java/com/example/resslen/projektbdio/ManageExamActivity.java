@@ -22,7 +22,7 @@ public class ManageExamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manage_exam);
         Intent Kintent = getIntent();
         final String ID = Kintent.getStringExtra("ID");
-        final String Nazwa =Kintent.getStringExtra("Nazwa_eg");
+        final String id_egzaminu =Kintent.getStringExtra("id_egzaminu");
         final TextView nazwaEgzaminu=(TextView)findViewById(R.id.Nazwa_egzaminu_view) ;
         final TextView kodEgzaminu=(TextView)findViewById(R.id.Kod_Aktywacji_view);
         final TextView dataUtworzenia=(TextView)findViewById(R.id.Data_Utworzenia_view);
@@ -38,19 +38,18 @@ public class ManageExamActivity extends AppCompatActivity {
                 boolean exists = false;
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
-                    JSONArray Exams = jsonResponse.getJSONArray("Exams");
+                    JSONArray Exams = jsonResponse.getJSONArray("exams");
 
                     for (i = 0; i < Exams.length(); i++) {
                         JSONObject obiekt = Exams.getJSONObject(i);
-                        String name = obiekt.getString("nazwa");
-                        if(Nazwa.equals(name)) {
+                        String id_egz = obiekt.getString("id_egzaminu");
+                        if(id_egzaminu.equals(id_egz)) {
                             exists = true;
                             break;
                         }
                     }
                     if(exists) {
                         JSONObject egzamin= Exams.getJSONObject(i);
-                        ExamID= egzamin.getString("Nazwa_eg");
                         String nazwa_egzaminu= egzamin.getString("nazwa");
                         String  kod=egzamin.getString("kod_aktywacyjny");
                         //nwm jak data
