@@ -43,7 +43,8 @@
         <activity android:name=".EditKeyActivity" />
         <activity android:name=".ManageExamActivity" />
         <activity android:name=".DolaczEgzamin" />
-        <activity android:name=".UruchomioneEgzaminy"></activity>
+        <activity android:name=".UruchomioneEgzaminy" />
+        <activity android:name=".EditExamRequest"></activity>
     </application>
 
 </manifest>

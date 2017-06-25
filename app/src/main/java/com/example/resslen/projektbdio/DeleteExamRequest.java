@@ -12,7 +12,7 @@ import java.util.Map;
  */
 
 public class DeleteExamRequest extends StringRequest {
-    private static final String DELETE_EXAM_REQUEST_URL = "https://bdiol4.herokuapp.com/groups/api/deleteExam";
+    private static final String DELETE_EXAM_REQUEST_URL = "https://bdiol4.herokuapp.com/exams/api/deleteExam";
     private Map<String, String> params;
 
     public DeleteExamRequest(String id_egzaminu, Response.Listener<String> listener){

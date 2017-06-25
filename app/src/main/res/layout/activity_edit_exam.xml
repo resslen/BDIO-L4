@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context="com.example.resslen.projektbdio.EditExamActivity">
 
+    <EditText
+        android:id="@+id/etnowanazwa"
+        android:layout_width="259dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="25dp"
+        android:ems="10"
+        android:hint="Podaj Nowa Nazwe Egzaminu"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="87dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.504" />
+
+    <Button
+        android:id="@+id/bnowanazwapotwierdz"
+        android:layout_width="161dp"
+        android:layout_height="49dp"
+        android:text="Zapisz zmiany"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintTop_toBottomOf="@+id/etnowanazwa" />
 </android.support.constraint.ConstraintLayout>

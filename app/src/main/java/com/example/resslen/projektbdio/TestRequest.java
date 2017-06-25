@@ -17,7 +17,7 @@ public class TestRequest extends StringRequest {
     public TestRequest(String id_egzamintora,Response.Listener<String> listener){
         super(Method.POST, TEST_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("id_egzamintora", id_egzamintora);
+        params.put("exam_id", id_egzamintora);
 
     }
 
