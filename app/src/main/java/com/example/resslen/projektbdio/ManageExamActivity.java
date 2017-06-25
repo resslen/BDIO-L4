@@ -41,16 +41,36 @@ public class ManageExamActivity extends AppCompatActivity {
                 boolean exists = false;
                 try {
                    JSONObject jsonResponse = new JSONObject(response);
-                   // JSONArray Exams = jsonResponse.getJSONArray("exam");
 
-                      //  JSONObject egzamin= Exams.getJSONObject(0);
-                        //String nazwa_egzaminu= egzamin.getString("nazwa");
-                        //String  kod=egzamin.getString("kod_aktywacyjny");
+                    JSONObject Exam=jsonResponse.getJSONObject("exam");
+                    JSONObject data=Exam.getJSONObject("ostatnia_zmiana_kodu");
+                    JSONObject udata=Exam.getJSONObject("data_utworzenia");
+                        String nazwa_egzaminu= Exam.getString("nazwa");
+                    String  kod=Exam.getString("kod_aktywacyjny");
+                    String date=data.getString("date");
+                    String hours=data.getString("hours");
+                    String month=data.getString("month");
+                    String year=data.getString("year");
+                    String minutes=data.getString("minutes");
+                    String seconds=data.getString("seconds");
+                    String day=data.getString("day");
+
+                    String udate=udata.getString("date");
+                    String uhours=udata.getString("hours");
+                    String umonth=udata.getString("month");
+                    String uyear=udata.getString("year");
+                    String uminutes=udata.getString("minutes");
+                    String useconds=udata.getString("seconds");
+                    String uday=udata.getString("day");
+                    //(͡° ͜ʖ ͡°)
 
 
-                      //  nazwaEgzaminu.setText(nazwaEgzaminu.getText()+ "\n"+ nazwa_egzaminu);
-                      //  kodEgzaminu.setText(kodEgzaminu.getText()+"\n"+kod);
-                    nazwaEgzaminu.setText(jsonResponse.getString("exam"));
+                        Odatamodyfikacji.setText((Odatamodyfikacji.getText()+"\n"+year+"-"+month+"-"+day+"-"+hours+":"+minutes+":"+seconds));
+                      nazwaEgzaminu.setText(nazwaEgzaminu.getText()+ "\n"+ nazwa_egzaminu);
+                        kodEgzaminu.setText(kodEgzaminu.getText()+"\n"+kod);
+                    dataUtworzenia.setText(dataUtworzenia.getText()+"\n"+uyear+"-"+umonth+"-"+uday+"-"+uhours+":"+uminutes+":"+useconds);
+
+
 
 
 
