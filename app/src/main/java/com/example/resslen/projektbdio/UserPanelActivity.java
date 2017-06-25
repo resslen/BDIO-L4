@@ -75,4 +75,9 @@ public class UserPanelActivity extends AppCompatActivity {
         intent.putExtra("email",email);
         startActivity(intent);
     }
+
+    public void clickdolaczdoegzaminu(View view) {
+        Intent intent = new Intent(this, DolaczEgzamin.class);
+        startActivity(intent);
+    }
 }

@@ -62,14 +62,12 @@ public class ManageExamActivity extends AppCompatActivity {
                     String uminutes=udata.getString("minutes");
                     String useconds=udata.getString("seconds");
                     String uday=udata.getString("day");
-                    //(͡° ͜ʖ ͡°)
-
 
                         Odatamodyfikacji.setText((Odatamodyfikacji.getText()+"\n"+year+"-"+month+"-"+day+"-"+hours+":"+minutes+":"+seconds));
                       nazwaEgzaminu.setText(nazwaEgzaminu.getText()+ "\n"+ nazwa_egzaminu);
                         kodEgzaminu.setText(kodEgzaminu.getText()+"\n"+kod);
                     dataUtworzenia.setText(dataUtworzenia.getText()+"\n"+uyear+"-"+umonth+"-"+uday+"-"+uhours+":"+uminutes+":"+useconds);
-
+                    //(͡° ͜ʖ ͡°)
 
 
 

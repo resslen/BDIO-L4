@@ -78,4 +78,9 @@ public class ExaminerPanelActivity extends AppCompatActivity {
         intent.putExtra("ID", ID);
         startActivity(intent);
     }
+
+    public void clickZacznij(View view) {
+        Intent intent = new Intent(this, UruchomioneEgzaminy.class);
+        startActivity(intent);
+    }
 }
