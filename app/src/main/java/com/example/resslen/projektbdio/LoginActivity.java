@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                                     intent.putExtra("status", state);
                                     intent.putExtra("ID", id_uzytkownika);
                                     LoginActivity.this.startActivity(intent);
+                                    finish();
                                 }else if(y == 0){
                                     Intent intent = new Intent(LoginActivity.this, ExaminerPanelActivity.class);
                                     intent.putExtra("nazwisko", surname);
@@ -76,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                     intent.putExtra("status", state);
                                     intent.putExtra("ID", id_studenta_or_egzaminatora);
                                     LoginActivity.this.startActivity(intent);
+                                    finish();
                                 }
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);

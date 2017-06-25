@@ -12,13 +12,13 @@
         android:id="@+id/tvSurname"
         android:layout_width="160dp"
         android:layout_height="27dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.254" />
 
@@ -26,13 +26,13 @@
         android:id="@+id/tvName"
         android:layout_width="153dp"
         android:layout_height="30dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.338" />
 
@@ -40,13 +40,13 @@
         android:id="@+id/tvEmail"
         android:layout_width="206dp"
         android:layout_height="33dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.439" />
 
@@ -54,15 +54,18 @@
         android:id="@+id/tvPassword"
         android:layout_width="182dp"
         android:layout_height="29dp"
-        android:textAlignment="center"
+        android:inputType="textPassword"
+        android:textAlignment="textStart"
         android:textColor="@android:color/black"
+
         android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
+
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <Button
         android:id="@+id/bChange"
@@ -72,7 +75,7 @@
         android:textColor="@android:color/black"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.101" />
@@ -163,7 +166,7 @@
         android:text="Statystyki oraz analiza egzaminów"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844"
+        app:layout_constraintVertical_bias="0.753"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.505" />
@@ -178,5 +181,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
+        app:layout_constraintVertical_bias="0.629" />
+
+    <Button
+        android:id="@+id/bLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyloguj"
+        android:textColor="@android:color/black"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.101" />
+
 </android.support.constraint.ConstraintLayout>

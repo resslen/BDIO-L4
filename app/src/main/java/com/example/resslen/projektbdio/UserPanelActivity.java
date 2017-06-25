@@ -27,6 +27,7 @@ public class UserPanelActivity extends AppCompatActivity {
         final TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
         final TextView tvPassword = (TextView) findViewById(R.id.tvPassword);
         final Button bChange = (Button) findViewById(R.id.bChange);
+        final Button bLogOut = (Button) findViewById(R.id.bLogOut);
 
 
         //pobieranie danych z bazy
@@ -47,9 +48,18 @@ public class UserPanelActivity extends AppCompatActivity {
                 Intent changeIntent = new Intent(UserPanelActivity.this, ProfileChangeActivity.class);
                 changeIntent.putExtra("1", surname);
                 changeIntent.putExtra("2", name);
-                changeIntent.putExtra("3", email);
-                changeIntent.putExtra("4", password);
+                changeIntent.putExtra("3", password);
+                changeIntent.putExtra("4", email);
                 UserPanelActivity.this.startActivity(changeIntent);
+            }
+        });
+
+        bLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent changeIntent = new Intent(UserPanelActivity.this, LoginActivity.class);
+                UserPanelActivity.this.startActivity(changeIntent);
+                finish();
             }
         });
 
