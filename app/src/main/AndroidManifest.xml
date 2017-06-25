@@ -44,7 +44,12 @@
         <activity android:name=".ManageExamActivity" />
         <activity android:name=".DolaczEgzamin" />
         <activity android:name=".UruchomioneEgzaminy" />
+<<<<<<< HEAD
         <activity android:name=".EditExamRequest"></activity>
+=======
+        <activity android:name=".ExamGroup" />
+        <activity android:name=".ExamGroupUser"></activity>
+>>>>>>> cac2f150817eb4e763c7c918121e9b3d25bc1400
     </application>
 
 </manifest>
