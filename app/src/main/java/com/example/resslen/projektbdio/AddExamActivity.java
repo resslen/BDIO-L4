@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,7 +28,7 @@ public class AddExamActivity extends AppCompatActivity {
 
         final EditText nazwagrupy = (EditText) findViewById(R.id.etdPodajGrupe);
         final Button DodajEgzamin = (Button) findViewById(R.id.bdDodajEgzamin);
-
+        final TextView test=(TextView)findViewById(R.id.test) ;
 
 
         DodajEgzamin.setOnClickListener(new View.OnClickListener(){
@@ -42,6 +43,7 @@ public class AddExamActivity extends AppCompatActivity {
                         try{
                             JSONObject jsonResponse = new JSONObject(response);
                             String error = jsonResponse.getString("error");
+                            test.setText(error);
                             if(error.equals("0")){
                                 Intent intent = new Intent(AddExamActivity.this, ExaminerPanelActivity.class);
                                 startActivity(intent);

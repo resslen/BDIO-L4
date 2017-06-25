@@ -11,15 +11,15 @@ import java.util.Map;
  */
 
 public class AddExamRequest extends StringRequest {
-    private static final String ADD_EXAM_REQUEST_URL = "https://bdiol4.herokuapp.com/groups/api/addexam";
+    private static final String ADD_EXAM_REQUEST_URL = "https://bdiol4.herokuapp.com/api/addExam";
     private Map<String, String> params;
 
-    public AddExamRequest(String nazwa,String nazwa_grupy, String id_egzamintora, Response.Listener<String> listener) {
+    public AddExamRequest(String nazwa,String id_grupy, String id_egzamintora, Response.Listener<String> listener) {
         super(Method.POST, ADD_EXAM_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("nazwa", nazwa);
-        params.put("id_egzamintora", id_egzamintora);
-        params.put("nazwa_grupy", nazwa_grupy);
+        params.put("name", nazwa);
+        params.put("id_examiner", id_egzamintora);
+        params.put("id_group", id_grupy);
 
 
 
