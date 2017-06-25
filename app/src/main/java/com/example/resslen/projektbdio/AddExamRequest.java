@@ -11,7 +11,7 @@ import java.util.Map;
  */
 
 public class AddExamRequest extends StringRequest {
-    private static final String ADD_EXAM_REQUEST_URL = "https://bdiol4.herokuapp.com/api/addExam";
+    private static final String ADD_EXAM_REQUEST_URL = "https://bdiol4.herokuapp.com/exams/api/addExam";
     private Map<String, String> params;
 
     public AddExamRequest(String nazwa,String id_grupy, String id_egzamintora, Response.Listener<String> listener) {

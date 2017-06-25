@@ -83,6 +83,7 @@ public class AddExamActivity extends AppCompatActivity {
 
                             if(error.equals("0")){
                                 Intent intent = new Intent(AddExamActivity.this, ExaminerPanelActivity.class);
+                                intent.putExtra("ID", ID);
                                 startActivity(intent);
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(AddExamActivity.this);

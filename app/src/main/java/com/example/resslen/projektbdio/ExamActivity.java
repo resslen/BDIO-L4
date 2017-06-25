@@ -27,7 +27,7 @@ public class ExamActivity extends AppCompatActivity {
         final TextView teksteg = (TextView)findViewById(R.id.textView7);
         final Button bWyswietleg =(Button) findViewById(R.id.bShowExam3);
         final Button Dodajeg= (Button) findViewById(R.id.bCreateExam);
-        final EditText Nazwaeg =(EditText) findViewById(R.id.etPodajidegzaminu);
+        final EditText ideg =(EditText) findViewById(R.id.etPodajidegzaminu);
         Response.Listener<String> responseListener = new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
@@ -66,7 +66,7 @@ public class ExamActivity extends AppCompatActivity {
         bWyswietleg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                final String id_eg=Nazwaeg.getText().toString();
+                final String id_eg=ideg.getText().toString();
                 Intent intent = new Intent(ExamActivity.this, ManageExamActivity.class);
                 intent.putExtra("ID", ID);
                 intent.putExtra("id_egzaminu",id_eg);
