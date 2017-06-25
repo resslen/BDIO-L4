@@ -37,7 +37,12 @@
         <activity android:name=".EditGroupRequest" />
         <activity android:name=".DeleteGroupRequest" />
         <activity android:name=".DolaczDoGrupy" />
-        <activity android:name=".DolaczDoGrupyRequest"></activity>
+        <activity android:name=".DolaczDoGrupyRequest" />
+        <activity android:name=".AddExamActivity" />
+        <activity android:name=".EditExamActivity" />
+        <activity android:name=".EditKeyActivity" />
+        <activity android:name=".ManageExamActivity" />
+        <activity android:name=".ShowExamActivity"></activity>
     </application>
 
 </manifest>

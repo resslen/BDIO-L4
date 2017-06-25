@@ -10,11 +10,11 @@ import java.util.Map;
  * Created by Resslen on 07.06.2017.
  */
 
-public class EditRequest extends StringRequest {
+public class EditRequestActivity extends StringRequest {
     private static final String REGISTER_REQUEST_URL = "DODAJ API";
     private Map<String, String> params;
 
-    public EditRequest(String surname, String name, String password, String email, Response.Listener<String> listener){
+    public EditRequestActivity(String surname, String name, String password, String email, Response.Listener<String> listener){
         super(Method.POST, REGISTER_REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("nazwisko", surname);

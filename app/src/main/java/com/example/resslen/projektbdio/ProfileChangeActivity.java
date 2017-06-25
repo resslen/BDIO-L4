@@ -15,13 +15,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.resslen.projektbdio.R.id.bLogin;
-import static com.example.resslen.projektbdio.R.id.etLogin;
-import static com.example.resslen.projektbdio.R.id.tvEmail;
-import static com.example.resslen.projektbdio.R.id.tvName;
-import static com.example.resslen.projektbdio.R.id.tvPassword;
-import static com.example.resslen.projektbdio.R.id.tvSurname;
-
 public class ProfileChangeActivity extends AppCompatActivity {
 
     @Override
@@ -87,7 +80,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                     }
                 };
 
-                EditRequest editRequest = new EditRequest(surname, name, password, email, responseListener);
+                EditRequestActivity editRequest = new EditRequestActivity(surname, name, password, email, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(ProfileChangeActivity.this);
                 queue.add(editRequest);
             }

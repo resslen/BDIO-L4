@@ -58,7 +58,10 @@ public class ExaminerPanelActivity extends AppCompatActivity {
 
     /** Called when the user taps the EXAM button */
     public void clickExamButton(View view) {
+        Intent Kintent = getIntent();
+        final String ID = Kintent.getStringExtra("ID");
         Intent intent = new Intent(this, ExamActivity.class);
+        intent.putExtra("ID", ID);
         startActivity(intent);
     }
 

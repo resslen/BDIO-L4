@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.resslen.projektbdio.AddExamActivity">
+
+    <EditText
+        android:id="@+id/etdPodajGrupe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Podaj grupe do egzaminu"
+        android:layout_marginTop="26dp"
+        app:layout_constraintLeft_toLeftOf="@+id/etdNazwaEgazminu"
+        app:layout_constraintTop_toBottomOf="@+id/etdNazwaEgazminu" />
+
+    <EditText
+        android:id="@+id/etdNazwaEgazminu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Podaj Nazwe Egzaminu"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/bDodajEgzamin" />
+
+    <Button
+        android:id="@+id/bdDodajEgzamin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj Egzamin"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/etdPodajGrupe"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+    <TextView
+        android:id="@+id/bDodajEgzamin"
+        android:layout_width="127dp"
+        android:layout_height="36dp"
+        android:text="Dodaj Egzamin"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp" />
+
+
+</android.support.constraint.ConstraintLayout>
