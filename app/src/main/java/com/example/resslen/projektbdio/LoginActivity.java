@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String surname = jsonResponse.getString("nazwisko");
                                 String name = jsonResponse.getString("imie");
                                 String id_studenta_or_egzaminatora = jsonResponse.getString("id_studenta_or_egzamintora");
-
+                                String id_uzytkownika=jsonResponse.getString("id_uzytkownika");
                                 //DODANE PRZEZ KAROL: przekazywanie ID do LoginActivity
                                 int y = Integer.parseInt(state);
                                 if(y == 1 ){
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                                     intent.putExtra("haslo", password);
                                     intent.putExtra("email", email);
                                     intent.putExtra("status", state);
-                                    intent.putExtra("ID", id_studenta_or_egzaminatora);
+                                    intent.putExtra("ID", id_uzytkownika);
                                     LoginActivity.this.startActivity(intent);
                                 }else if(y == 0){
                                     Intent intent = new Intent(LoginActivity.this, ExaminerPanelActivity.class);

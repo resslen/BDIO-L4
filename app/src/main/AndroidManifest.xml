@@ -27,11 +27,21 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterExaminerActivity" />
         <activity android:name=".ExaminerPanelActivity" />
-        <activity android:name=".GroupsActivity" />
         <activity android:name=".EditGroupActivity" />
         <activity android:name=".AddGroupActivity" />
         <activity android:name=".ShowGroupActivity" />
-        <activity android:name=".AddGroupRequest"></activity>
+        <activity android:name=".AddGroupRequest" />
+        <activity android:name=".ShowGroupRequest" />
+        <activity android:name=".GroupPropertiesActivity" />
+        <activity android:name=".UsunCzlonkaRequest" />
+        <activity android:name=".EditGroupRequest" />
+        <activity android:name=".DeleteGroupRequest" />
+        <activity android:name=".DolaczDoGrupy" />
+        <activity android:name=".DolaczDoGrupyRequest" />
+        <activity android:name=".AddExamActivity" />
+        <activity android:name=".EditExamActivity" />
+        <activity android:name=".EditKeyActivity" />
+        <activity android:name=".ManageExamActivity" />
     </application>
 
 </manifest>

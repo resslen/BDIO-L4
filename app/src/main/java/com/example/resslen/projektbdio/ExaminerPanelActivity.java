@@ -58,7 +58,10 @@ public class ExaminerPanelActivity extends AppCompatActivity {
 
     /** Called when the user taps the EXAM button */
     public void clickExamButton(View view) {
+        Intent Kintent = getIntent();
+        final String ID = Kintent.getStringExtra("ID");
         Intent intent = new Intent(this, ExamActivity.class);
+        intent.putExtra("ID", ID);
         startActivity(intent);
     }
 
@@ -71,7 +74,7 @@ public class ExaminerPanelActivity extends AppCompatActivity {
     public void clickGrupyButton() {
         Intent intent2 = getIntent();
         final String ID = intent2.getStringExtra("ID");
-        Intent intent = new Intent(this, GroupsActivity.class);
+        Intent intent = new Intent(this, ShowGroupActivity.class);
         intent.putExtra("ID", ID);
         startActivity(intent);
     }

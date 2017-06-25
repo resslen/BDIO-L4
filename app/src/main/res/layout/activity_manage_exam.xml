@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.resslen.projektbdio.ManageExamActivity">
+
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="149dp"
+        android:layout_height="329dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/ListaTestow_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/O_zmiana_kodu_view"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.578" />
+
+    <TextView
+        android:id="@+id/ListaTestow_view"
+        android:layout_width="156dp"
+        android:layout_height="35dp"
+        android:text="Lista Testów:"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="17dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/O_zmiana_kodu_view"
+        android:layout_width="156dp"
+        android:layout_height="79dp"
+        android:text="Ostatnia zmiana kodu:"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/Data_Utworzenia_view"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/Data_Utworzenia_view" />
+
+    <TextView
+        android:id="@+id/Data_Utworzenia_view"
+        android:layout_width="156dp"
+        android:layout_height="60dp"
+        android:text="Data utworzenia:"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/Kod_Aktywacji_view"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/Kod_Aktywacji_view" />
+
+    <TextView
+        android:id="@+id/Kod_Aktywacji_view"
+        android:layout_width="156dp"
+        android:layout_height="60dp"
+        android:text="Kod aktywacji:"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/Nazwa_egzaminu_view"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/Nazwa_egzaminu_view" />
+
+    <TextView
+        android:id="@+id/Nazwa_egzaminu_view"
+        android:layout_width="156dp"
+        android:layout_height="60dp"
+        android:text="Nazwa:"
+        android:textAllCaps="false"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/bEdytujKlucz"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:text="Edytuj Klucz"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/bEditExam"
+        app:layout_constraintLeft_toLeftOf="@+id/bEditExam"
+        android:layout_marginLeft="-10dp" />
+
+    <Button
+        android:id="@+id/bEditExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edytuj nazwe"
+        android:onClick="clickEditExam"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/O_zmiana_kodu_view" />
+
+    <Button
+        android:id="@+id/bDeleteExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usun Egzamin"
+
+        app:layout_constraintLeft_toLeftOf="@+id/button"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/bEdytujKlucz" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zarzadzaj Egzaminem"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="6dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.086" />
+
+</android.support.constraint.ConstraintLayout>
