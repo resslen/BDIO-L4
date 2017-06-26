@@ -30,26 +30,16 @@
         <activity android:name=".EditGroupActivity" />
         <activity android:name=".AddGroupActivity" />
         <activity android:name=".ShowGroupActivity" />
-        <activity android:name=".AddGroupRequest" />
-        <activity android:name=".ShowGroupRequest" />
         <activity android:name=".GroupPropertiesActivity" />
-        <activity android:name=".UsunCzlonkaRequest" />
-        <activity android:name=".EditGroupRequest" />
-        <activity android:name=".DeleteGroupRequest" />
         <activity android:name=".DolaczDoGrupy" />
-        <activity android:name=".DolaczDoGrupyRequest" />
         <activity android:name=".AddExamActivity" />
         <activity android:name=".EditExamActivity" />
         <activity android:name=".EditKeyActivity" />
         <activity android:name=".ManageExamActivity" />
         <activity android:name=".DolaczEgzamin" />
         <activity android:name=".UruchomioneEgzaminy" />
-<<<<<<< HEAD
-        <activity android:name=".EditExamRequest"></activity>
-=======
         <activity android:name=".ExamGroup" />
-        <activity android:name=".ExamGroupUser"></activity>
->>>>>>> cac2f150817eb4e763c7c918121e9b3d25bc1400
+        <activity android:name=".ExamGroupUser" />
     </application>
 
 </manifest>
