@@ -19,6 +19,7 @@ import org.w3c.dom.Text;
 
 public class ManageExamActivity extends AppCompatActivity {
     String ExamID;
+    String WTesty[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +31,13 @@ public class ManageExamActivity extends AppCompatActivity {
         final TextView kodEgzaminu=(TextView)findViewById(R.id.Kod_Aktywacji_view);
         final TextView dataUtworzenia=(TextView)findViewById(R.id.Data_Utworzenia_view);
         final TextView Odatamodyfikacji=(TextView)findViewById(R.id.O_zmiana_kodu_view);
-        final Button edytujKlucz = (Button) findViewById(R.id.bEdytujKlucz);
+        final Button bedytujKlucz = (Button) findViewById(R.id.bEdytujKlucz);
         final Button usunEgzamin = (Button) findViewById(R.id.bDeleteExam);
-        final Button edytujEgzamin = (Button) findViewById(R.id.bEditExam);
+        final Button bedytujEgzamin = (Button) findViewById(R.id.bEditExam);
         final TextView Testy=(TextView) findViewById(R.id.textView20);
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
-                boolean exists = false;
                 try {
                    JSONObject jsonResponse = new JSONObject(response);
 
@@ -68,10 +67,6 @@ public class ManageExamActivity extends AppCompatActivity {
                         kodEgzaminu.setText(kodEgzaminu.getText()+"\n"+kod);
                     dataUtworzenia.setText(dataUtworzenia.getText()+"\n"+uyear+"-"+umonth+"-"+uday+"-"+uhours+":"+uminutes+":"+useconds);
                     //(͡° ͜ʖ ͡°)
-
-
-
-
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
@@ -80,11 +75,45 @@ public class ManageExamActivity extends AppCompatActivity {
         ExamDetailsRequest ExamDetailsrequest = new ExamDetailsRequest(id_egzaminu,responseListener);
         RequestQueue queue = Volley.newRequestQueue(ManageExamActivity.this);
         queue.add(ExamDetailsrequest);
+        Response.Listener<String> responseListener2 = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray tests = jsonResponse.getJSONArray("tests");
+
+                    String ID_n[] = new String[tests.length()];
+                    String Nazwa[] = new String[tests.length()];
+                    for (int i = 0; i < tests.length(); i++) {
+                        JSONObject obiekt = tests.getJSONObject(i);
+                        String id = obiekt.getString("id_testu");
+                        ID_n[i] = id;
+                    }
+                    for (int i = 0; i < tests.length(); i++) {
+                        JSONObject obiekt = tests.getJSONObject(i);
+                        String name = obiekt.getString("nazwa");
+                        Nazwa[i] = name;
+                    }
+                    WTesty= new String[tests.length()];
+                    Testy.setText("");
+                    for(int i=0; i<tests.length();i++) {
+
+                        Testy.setText(Testy.getText() + ID_n[i] + "." + Nazwa[i] + "\n");
+                    }
+
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        TestRequest   TestRequest = new   TestRequest(id_egzaminu,responseListener2);
+        RequestQueue queue2 = Volley.newRequestQueue(ManageExamActivity.this);
+        queue2.add(  TestRequest);
 
         usunEgzamin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                Response.Listener<String> responseListener3 = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
@@ -93,7 +122,7 @@ public class ManageExamActivity extends AppCompatActivity {
                             String error = jsonResponse.getString("error");
 
                             if (error.equals("0")) {
-                                Intent intent = new Intent(ManageExamActivity.this, ManageExamActivity.class);
+                                Intent intent = new Intent(ManageExamActivity.this, ExamActivity.class);
                                 intent.putExtra("id_egzaminu", id_egzaminu);
                                 startActivity(intent);
                             } else {
@@ -111,7 +140,7 @@ public class ManageExamActivity extends AppCompatActivity {
                     }
 
                 };//
-                DeleteExamRequest DeleteExamRequest = new DeleteExamRequest(id_egzaminu,responseListener);
+                DeleteExamRequest DeleteExamRequest = new DeleteExamRequest(id_egzaminu,responseListener3);
                 RequestQueue queue = Volley.newRequestQueue(ManageExamActivity.this);
                 queue.add(DeleteExamRequest);
 
@@ -119,5 +148,31 @@ public class ManageExamActivity extends AppCompatActivity {
         });
 
 
+        bedytujEgzamin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                Intent intent = new Intent(ManageExamActivity.this, EditExamActivity.class);
+                intent.putExtra("ID", ID);
+                intent.putExtra("id_egzaminu",id_egzaminu);
+                startActivity(intent);
+
+
+            }
+        });
+        bedytujKlucz.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                Intent intent = new Intent(ManageExamActivity.this, EditKeyActivity.class);
+                intent.putExtra("ID", ID);
+                intent.putExtra("id_egzaminu",id_egzaminu);
+                startActivity(intent);
+
+
+            }
+        });
     }
+
+
 }

@@ -39,7 +39,7 @@ public class ExamActivity extends AppCompatActivity {
                     String Nazwa[] = new String[exams.length()];
                     for (int i = 0; i < exams.length(); i++) {
                         JSONObject obiekt = exams.getJSONObject(i);
-                        String id = obiekt.getString("id_egzaminu");//upewnic sie
+                        String id = obiekt.getString("id_egzaminu");
                         ID_n[i] = id;
                     }
                     for (int i = 0; i < exams.length(); i++) {

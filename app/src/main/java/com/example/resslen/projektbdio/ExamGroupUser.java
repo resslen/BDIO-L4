@@ -35,7 +35,7 @@ public class ExamGroupUser extends AppCompatActivity {
     }
 
     public void dolacz(View view) {
-        Intent intent = new Intent(this, ExamActivity.class);
+        Intent intent = new Intent(this, DolaczEgzamin.class);
         startActivity(intent);
     }
 }
