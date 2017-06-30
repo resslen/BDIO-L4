@@ -62,7 +62,7 @@ public class EditExamActivity extends AppCompatActivity {
 
                 };
 
-                EditExamRequest editExamRequest = new EditExamRequest(id_egzaminu, nowanazwa.getText().toString();
+                EditExamRequest editExamRequest = new EditExamRequest(id_egzaminu,nowanazwa.getText().toString(), responseListener);
                 RequestQueue queue = Volley.newRequestQueue(EditExamActivity.this);
                 queue.add(editExamRequest);
 
@@ -71,4 +71,4 @@ public class EditExamActivity extends AppCompatActivity {
         });
     }
     }
-}
+//}

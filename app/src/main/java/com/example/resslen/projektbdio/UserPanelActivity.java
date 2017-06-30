@@ -27,6 +27,7 @@ public class UserPanelActivity extends AppCompatActivity {
         final TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
         final TextView tvPassword = (TextView) findViewById(R.id.tvPassword);
         final Button bChange = (Button) findViewById(R.id.bChange);
+
         final Button bLogOut = (Button) findViewById(R.id.bLogOut);
 
 
@@ -74,7 +75,7 @@ public class UserPanelActivity extends AppCompatActivity {
      * Called when the user taps the STATISTICS button
      */
     public void clickStatisticsButton(View view) {
-        Intent intent = new Intent(this, StatisticsActivity.class);
+        Intent intent = new Intent(this, StatisticsActivityUser.class);
         startActivity(intent);
     }
     public void b10(View view) {

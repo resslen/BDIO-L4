@@ -1,4 +1,45 @@
 <resources>
     <string name="app_name">ProjektBDIO</string>
-    <string name="title_activity_add_group">AddGroup</string>
+    <string name="wybierz_rocznik">Wybierz rocznik</string>
+
+
+    <string-array name="WYBIERZ_ROCZNIK">
+        <item>1 EF-DI</item>
+        <item>2 EF-DI </item>
+        <item>3 EF-DI</item>
+
+    </string-array>
+
+
+
+
+    <string-array name="WYBIERZ_ROK">
+        <item>2017</item>
+        <item>2016</item>
+
+    </string-array>
+
+
+    <string-array name="rok_1">
+
+        <item>zerówka</item>
+        <item>1 termin</item>
+        <item>2 termin</item>
+
+    </string-array>
+
+
+    <string-array name="rok_2">
+        <item>zerówka</item>
+        <item>1 termin</item>
+
+
+    </string-array>
+
+
+    <string-array name="rok_3">
+        <item>1 termin</item>
+        <item>2 termin</item>
+
+    </string-array>
 </resources>
